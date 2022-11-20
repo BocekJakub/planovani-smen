@@ -1,0 +1,111 @@
+body {
+    background: #eee;
+    margin: 0;
+    padding: 0;
+}
+
+#side-nav {
+    background: rgb(43, 85, 238);
+    min-width: 160px;
+    max-width: 220px;
+}
+
+.content {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.sidebar li.active {
+    background: rgb(40, 24, 142);
+    border-radius: 8px;
+}
+
+.sidebar li.active a, .sidebar li.active a.hover {
+    color: rgb(0, 0, 0);
+}
+
+.sidebar li a {
+    color: rgb(255, 255, 255);
+}
+
+#menu-list li i {
+    margin-right: 10px;
+}
+
+.d0,.d1,.d2,.d3,.d4,.d5,.d6,.d7,.d8,.d9,.d10,.d11,.d12,.d13,.d14,.d15,.d16,.d17,.d18,.d18,.d19,.d20,.d21,.d22,.d23,.d24,.d25,.d26,.d27,.d28,.d29,.d30,.d31 {
+    border: 1px solid #030645;
+    border-radius: 1.5px;
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+    vertical-align : middle;
+    text-align: center;
+}
+
+.name-shift {
+    margin: 1px;
+    padding: 2px;
+    border: 1px solid #0d6efd;
+    border-radius: 2px;
+    background-color: #0d6efd;
+    color: rgb(190, 196, 230);;
+    align-items: center;
+    text-align: center;
+    vertical-align : middle;
+    height: 100%;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+.month-days,.date-in-month,.days-in-month,.kalendar1,.kalendar2,.kalendar3,.kalendar4,.kalendar5,.kalendar6,.kalendar7,.kalendar8,.kalendar9,.kalendar10,.kalendar11,.kalendar12,.kalendar13,.kalendar14,.kalendar15,.kalendar16 {
+    display: flex;
+    flex-direction: row;
+}
+
+#month-choice {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items:center;
+
+}
+.month-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: auto;
+    padding: auto;
+}
+
+.left-arrow, .right-arrow {
+    margin: 5px;
+    padding: 5px;
+}
+
+#month, #year {
+    padding: 5px;
+}
+
+.flex-row-nowrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.O1, .O2, .O3, .O4 {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.O1-info, .O2-info, .O3-info, .O4-info {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.O1-persons, .O2-persons, .O3-persons, .O4-persons {
+    width: 100%;
+}
+
+#O1VS, #O1OD, #O1T1, #O1T2, #O2VS, #O2OD, #O2T1, #O2T2, #O3VS, #O3OD, #O3T1, #O3T2, #O4VS, #O4OD, #O4T1, #O4T2 {
+    padding-left: 4px;
+}

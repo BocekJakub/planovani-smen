@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>NOPIS kalendář</title>
+</head>
+<body>
+    <div class="main-container d-flex">
+        <div class="sidebar" id="side-nav">
+            <div class="header-box">
+                <h1 class="fs-4 text-center p-3"><span class="text-light rounded shadow px-2 py-0 me-2">Menu</span></h1>
+                <button class="btn d-md-none d-block btn close-btn px-1 py-0 text-light"><i class="fa-solid fa-bars"></i></button>
+            </div>
+            <ul class="list-unstyled px-2" id="menu-list">
+                <li class="active"><a href="#" class="text-decoration-none text-light px-3 py-2 d-block"><i class="fa-regular fa-calendar"></i>Kalendář</a></li>
+                <li class=""><a href="#" class="text-decoration-none text-light px-3 py-2 d-block"><i class="fa-regular fa-pen-to-square"></i>Požadavky</a></li>
+                <li class=""><a href="#" class="text-decoration-none text-light px-3 py-2 d-block"><i class="fa-solid fa-list"></i>Přehled</a></li>
+                <li class=""><a href="#" class="text-decoration-none text-light px-3 py-2 d-block"><i class="fa-solid fa-hammer"></i>Admin</a></li>
+                <li class=""><a href="#" class="text-decoration-none text-light px-3 py-2 d-block"><i class="fa-solid fa-power-off"></i>Odhlásit</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">UŽIVATEL</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                            <div class="p-1 bg-white shadow-sm d-flex justify-content-center align-items-center rounded">
+                                <div class="align-items-center justify-content-between">
+                                    <p class="fs-6 center">Dovolená</p>
+                                    <h3 class="fs-5"><span id="vac-hours">225</span> h</h3>
+                                </div>
+                            </div>
+                      </li>
+                      <li class="nav-item">
+                            <div class="p-1 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                                <div class="align-items-center justify-content-between">
+                                    <p class="fs-6">FPD</p>
+                                    <h3 class="fs-5"><span id="FPD-hours">4</span> h</h3>
+                                </div>
+                            </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            </nav>
+            <div class="mx-1 my-1">
+                <div class="calendar">
+                    <div class="month-days">
+                        <div class="col-3 border" id="month-choice">
+                            <a class="left-arrow" href="#"><i class="fa-solid fa-arrow-left"></i></a>
+                            <div class="month-name">
+                                <h5 class="text-uppercase month-name"><span id="month">Prosinec</span><span id="year"> 2022</span></h5>
+                            </div>
+                            <a class="right-arrow" href="#"><i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="float-start border col-9" id="days">
+                            <div class="days-in-month flex-row-nowrap" id="day-date">
+                                <div class="d0"></div><div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div><div class="d5"></div><div class="d6"></div><div class="d7"></div><div class="d8"></div><div class="d9"></div><div class="d10"></div><div class="d11"></div><div class="d12"></div><div class="d13"></div><div class="d14"></div><div class="d15">ne</div><div class="d16"></div><div class="d17"></div><div class="d18"></div><div class="d19"></div><div class="d20"></div><div class="d21"></div><div class="d22"></div><div class="d23"></div><div class="d24"></div><div class="d25"></div><div class="d26"></div><div class="d27"></div><div class="d28"></div><div class="d29"></div><div class="d30"></div><div class="d31"></div>
+                            </div>
+                            <div class="days-in-month flex-row-nowrap" id="name-days">
+                                <div class="d0"></div><div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div><div class="d5"></div><div class="d6"></div><div class="d7"></div><div class="d8"></div><div class="d9"></div><div class="d10"></div><div class="d11"></div><div class="d12"></div><div class="d13"></div><div class="d14"></div><div class="d15">ne</div><div class="d16"></div><div class="d17"></div><div class="d18"></div><div class="d19"></div><div class="d20"></div><div class="d21"></div><div class="d22"></div><div class="d23"></div><div class="d24"></div><div class="d25"></div><div class="d26"></div><div class="d27"></div><div class="d28"></div><div class="d29"></div><div class="d30"></div><div class="d31"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shifts">
+                        <div class="O1">
+                            <div class="O1-info col-3">
+                                <div class="name-shift rounded">O1</div>
+                                <div class="O1-persons">
+                                    <div class="shadow-sm rounded" id="O1VS">Uživatel1</div>
+                                    <div class="shadow-sm rounded" id="O1OD">Uživatel2</div>
+                                    <div class="shadow-sm rounded" id="O1T1">Uživatel3</div>
+                                    <div class="shadow-sm rounded" id="O1T2">Uživatel4</div>
+                                </div>
+                            </div>
+                            <div class="calendars-O1 col-9">
+                                <div class="kalendar-VS flex-row-nowrap">
+                                    <div class="d0"></div><div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div><div class="d5"></div><div class="d6"></div><div class="d7"></div><div class="d8"></div><div class="d9"></div><div class="d10"></div><div class="d11"></div><div class="d12"></div><div class="d13"></div><div class="d14"></div><div class="d15"></div><div class="d16"></div><div class="d17"></div><div class="d18"></div><div class="d19"></div><div class="d20"></div><div class="d21"></div><div class="d22"></div><div class="d23"></div><div class="d24"></div><div class="d25"></div><div class="d26"></div><div class="d27"></div><div class="d28"></div><div class="d29"></div><div class="d30"></div><div class="d31"></div>
+                                </div>
+                                <div class="kalendar-OD flex-row-nowrap">
+                                    <div class="d0"></div><div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div><div class="d5"></div><div class="d6"></div><div class="d7"></div><div class="d8"></div><div class="d9"></div><div class="d10"></div><div class="d11"></div><div class="d12"></div><div class="d13"></div><div class="d14"></div><div class="d15"></div><div class="d16"></div><div class="d17"></div><div class="d18"></div><div class="d19"></div><div class="d20"></div><div class="d21"></div><div class="d22"></div><div class="d23"></div><div class="d24"></div><div class="d25"></div><div class="d26"></div><div class="d27"></div><div class="d28"></div><div class="d29"></div><div class="d30"></div><div class="d31"></div>
+                                </div>
+                                <div class="kalendar-T1 flex-row-nowrap">
+                                    <div class="d0"></div><div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div><div class="d5"></div><div class="d6"></div><div class="d7"></div><div class="d8"></div><div class="d9"></div><div class="d10"></div><div class="d11"></div><div class="d12"></div><div class="d13"></div><div class="d14"></div><div class="d15"></div><div class="d16"></div><div class="d17"></div><div class="d18"></div><div class="d19"></div><div class="d20"></div><div class="d21"></div><div class="d22"></div><div class="d23"></div><div class="d24"></div><div class="d25"></div><div class="d26"></div><div class="d27"></div><div class="d28"></div><div class="d29"></div><div class="d30"></div><div class="d31"></div>
+                                </div>
+                                <div class="kalendar-T2 flex-row-nowrap">
+                                    <div class="d0"></div><div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div><div class="d5"></div><div class="d6"></div><div class="d7"></div><div class="d8"></div><div class="d9"></div><div class="d10"></div><div class="d11"></div><div class="d12"></div><div class="d13"></div><div class="d14"></div><div class="d15"></div><div class="d16"></div><div class="d17"></div><div class="d18"></div><div class="d19"></div><div class="d20"></div><div class="d21"></div><div class="d22"></div><div class="d23"></div><div class="d24"></div><div class="d25"></div><div class="d26"></div><div class="d27"></div><div class="d28"></div><div class="d29"></div><div class="d30"></div><div class="d31"></div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="O2">
+                            <div class="O2-info col-3">
+                                <div class="name-shift rounded">O2</div>
+                                <div class="O2-persons">
+                                    <div class="shadow-sm rounded" id="O2VS">Uživatel1</div>
+                                    <div class="shadow-sm rounded" id="O2OD">Uživatel2</div>
+                                    <div class="shadow-sm rounded" id="O2T1">Uživatel3</div>
+                                    <div class="shadow-sm rounded" id="O2T2">Uživatel4</div>
+                                </div>
+                            </div>
+                            <div class="calendars-O2 col-9">
+                                <div class="kalendar-VS flex-row-nowrap">
+                                    <div class="d0"></div><div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div><div class="d5"></div><div class="d6"></div><div class="d7"></div><div class="d8"></div><div class="d9"></div><div class="d10"></div><div class="d11"></div><div class="d12"></div><div class="d13"></div><div class="d14"></div><div class="d15"></div><div class="d16"></div><div class="d17"></div><div class="d18"></div><div class="d19"></div><div class="d20"></div><div class="d21"></div><div class="d22"></div><div class="d23"></div><div class="d24"></div><div class="d25"></div><div class="d26"></div><div class="d27"></div><div class="d28"></div><div class="d29"></div><div class="d30"></div><div class="d31"></div>
+                                </div>
+                                <div class="kalendar-OD flex-row-nowrap">
+                                    <div class="d0"></div><div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div><div class="d5"></div><div class="d6"></div><div class="d7"></div><div class="d8"></div><div class="d9"></div><div class="d10"></div><div class="d11"></div><div class="d12"></div><div class="d13"></div><div class="d14"></div><div class="d15"></div><div class="d16"></div><div class="d17"></div><div class="d18"></div><div class="d19"></div><div class="d20"></div><div class="d21"></div><div class="d22"></div><div class="d23"></div><div class="d24"></div><div class="d25"></div><div class="d26"></div><div class="d27"></div><div class="d28"></div><div class="d29"></div><div class="d30"></div><div class="d31"></div>
+                                </div>
+                                <div class="kalendar-T1 flex-row-nowrap">
+                                    <div class="d0"></div><div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div><div class="d5"></div><div class="d6"></div><div class="d7"></div><div class="d8"></div><div class="d9"></div><div class="d10"></div><div class="d11"></div><div class="d12"></div><div class="d13"></div><div class="d14"></div><div class="d15"></div><div class="d16"></div><div class="d17"></div><div class="d18"></div><div class="d19"></div><div class="d20"></div><div class="d21"></div><div class="d22"></div><div class="d23"></div><div class="d24"></div><div class="d25"></div><div class="d26"></div><div class="d27"></div><div class="d28"></div><div class="d29"></div><div class="d30"></div><div class="d31"></div>
+                                </div>
+                                <div class="kalendar-T2 flex-row-nowrap">
+                                    <div class="d0"></div><div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div><div class="d5"></div><div class="d6"></div><div class="d7"></div><div class="d8"></div><div class="d9"></div><div class="d10"></div><div class="d11"></div><div class="d12"></div><div class="d13"></div><div class="d14"></div><div class="d15"></div><div class="d16"></div><div class="d17"></div><div class="d18"></div><div class="d19"></div><div class="d20"></div><div class="d21"></div><div class="d22"></div><div class="d23"></div><div class="d24"></div><div class="d25"></div><div class="d26"></div><div class="d27"></div><div class="d28"></div><div class="d29"></div><div class="d30"></div><div class="d31"></div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="O3">
+                            <div class="O3-info col-3">
+                                <div class="name-shift rounded">O3</div>
+                                <div class="O3-persons">
+                                    <div class="shadow-sm rounded" id="O3VS">Uživatel1</div>
+                                    <div class="shadow-sm rounded" id="O3OD">Uživatel2</div>
+                                    <div class="shadow-sm rounded" id="O3T1">Uživatel3</div>
+                                    <div class="shadow-sm rounded" id="O3T2">Uživatel4</div>
+                                </div>
+                            </div>
+                            <div class="calendars-O3 col-9">
+                                <div class="kalendar-VS flex-row-nowrap">
+                                    <div class="d0"></div><div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div><div class="d5"></div><div class="d6"></div><div class="d7"></div><div class="d8"></div><div class="d9"></div><div class="d10"></div><div class="d11"></div><div class="d12"></div><div class="d13"></div><div class="d14"></div><div class="d15"></div><div class="d16"></div><div class="d17"></div><div class="d18"></div><div class="d19"></div><div class="d20"></div><div class="d21"></div><div class="d22"></div><div class="d23"></div><div class="d24"></div><div class="d25"></div><div class="d26"></div><div class="d27"></div><div class="d28"></div><div class="d29"></div><div class="d30"></div><div class="d31"></div>
+                                </div>
+                                <div class="kalendar-OD flex-row-nowrap">
+                                    <div class="d0"></div><div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div><div class="d5"></div><div class="d6"></div><div class="d7"></div><div class="d8"></div><div class="d9"></div><div class="d10"></div><div class="d11"></div><div class="d12"></div><div class="d13"></div><div class="d14"></div><div class="d15"></div><div class="d16"></div><div class="d17"></div><div class="d18"></div><div class="d19"></div><div class="d20"></div><div class="d21"></div><div class="d22"></div><div class="d23"></div><div class="d24"></div><div class="d25"></div><div class="d26"></div><div class="d27"></div><div class="d28"></div><div class="d29"></div><div class="d30"></div><div class="d31"></div>
+                                </div>
+                                <div class="kalendar-T1 flex-row-nowrap">
+                                    <div class="d0"></div><div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div><div class="d5"></div><div class="d6"></div><div class="d7"></div><div class="d8"></div><div class="d9"></div><div class="d10"></div><div class="d11"></div><div class="d12"></div><div class="d13"></div><div class="d14"></div><div class="d15"></div><div class="d16"></div><div class="d17"></div><div class="d18"></div><div class="d19"></div><div class="d20"></div><div class="d21"></div><div class="d22"></div><div class="d23"></div><div class="d24"></div><div class="d25"></div><div class="d26"></div><div class="d27"></div><div class="d28"></div><div class="d29"></div><div class="d30"></div><div class="d31"></div>
+                                </div>
+                                <div class="kalendar-T2 flex-row-nowrap">
+                                    <div class="d0"></div><div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div><div class="d5"></div><div class="d6"></div><div class="d7"></div><div class="d8"></div><div class="d9"></div><div class="d10"></div><div class="d11"></div><div class="d12"></div><div class="d13"></div><div class="d14"></div><div class="d15"></div><div class="d16"></div><div class="d17"></div><div class="d18"></div><div class="d19"></div><div class="d20"></div><div class="d21"></div><div class="d22"></div><div class="d23"></div><div class="d24"></div><div class="d25"></div><div class="d26"></div><div class="d27"></div><div class="d28"></div><div class="d29"></div><div class="d30"></div><div class="d31"></div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="O4">
+                            <div class="O4-info col-3">
+                                <div class="name-shift rounded">O4</div>
+                                <div class="O4-persons">
+                                    <div class="shadow-sm rounded" id="O4VS">Uživatel1</div>
+                                    <div class="shadow-sm rounded" id="O4OD">Uživatel2</div>
+                                    <div class="shadow-sm rounded" id="O4T1">Uživatel3</div>
+                                    <div class="shadow-sm rounded" id="O4T2">Uživatel4</div>
+                                </div>
+                            </div>
+                            <div class="calendars-O4 col-9">
+                                <div class="kalendar-VS flex-row-nowrap">
+                                    <div class="d0"></div><div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div><div class="d5"></div><div class="d6"></div><div class="d7"></div><div class="d8"></div><div class="d9"></div><div class="d10"></div><div class="d11"></div><div class="d12"></div><div class="d13"></div><div class="d14"></div><div class="d15"></div><div class="d16"></div><div class="d17"></div><div class="d18"></div><div class="d19"></div><div class="d20"></div><div class="d21"></div><div class="d22"></div><div class="d23"></div><div class="d24"></div><div class="d25"></div><div class="d26"></div><div class="d27"></div><div class="d28"></div><div class="d29"></div><div class="d30"></div><div class="d31"></div>
+                                </div>
+                                <div class="kalendar-OD flex-row-nowrap">
+                                    <div class="d0"></div><div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div><div class="d5"></div><div class="d6"></div><div class="d7"></div><div class="d8"></div><div class="d9"></div><div class="d10"></div><div class="d11"></div><div class="d12"></div><div class="d13"></div><div class="d14"></div><div class="d15"></div><div class="d16"></div><div class="d17"></div><div class="d18"></div><div class="d19"></div><div class="d20"></div><div class="d21"></div><div class="d22"></div><div class="d23"></div><div class="d24"></div><div class="d25"></div><div class="d26"></div><div class="d27"></div><div class="d28"></div><div class="d29"></div><div class="d30"></div><div class="d31"></div>
+                                </div>
+                                <div class="kalendar-T1 flex-row-nowrap">
+                                    <div class="d0"></div><div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div><div class="d5"></div><div class="d6"></div><div class="d7"></div><div class="d8"></div><div class="d9"></div><div class="d10"></div><div class="d11"></div><div class="d12"></div><div class="d13"></div><div class="d14"></div><div class="d15"></div><div class="d16"></div><div class="d17"></div><div class="d18"></div><div class="d19"></div><div class="d20"></div><div class="d21"></div><div class="d22"></div><div class="d23"></div><div class="d24"></div><div class="d25"></div><div class="d26"></div><div class="d27"></div><div class="d28"></div><div class="d29"></div><div class="d30"></div><div class="d31"></div>
+                                </div>
+                                <div class="kalendar-T2 flex-row-nowrap">
+                                    <div class="d0"></div><div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div><div class="d5"></div><div class="d6"></div><div class="d7"></div><div class="d8"></div><div class="d9"></div><div class="d10"></div><div class="d11"></div><div class="d12"></div><div class="d13"></div><div class="d14"></div><div class="d15"></div><div class="d16"></div><div class="d17"></div><div class="d18"></div><div class="d19"></div><div class="d20"></div><div class="d21"></div><div class="d22"></div><div class="d23"></div><div class="d24"></div><div class="d25"></div><div class="d26"></div><div class="d27"></div><div class="d28"></div><div class="d29"></div><div class="d30"></div><div class="d31"></div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>                         
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        $(".sidebar ul li").on('click' , function(){
+            $(".sidebar ul li.active").removeClass('active');
+            $(this).addClass('active');
+        })
+    </script>
+</body>
+</html>
