@@ -19,8 +19,18 @@
                 <button class="btn d-md-none d-block btn close-btn px-1 py-0 text-light"><i class="fa-solid fa-bars"></i></button>
             </div>
             <ul class="list-unstyled px-2" id="menu-list">
-                <li class="active"><a href="#" class="text-decoration-none text-light px-3 py-2 d-block"><i class="fa-regular fa-calendar"></i>Kalendář</a></li>
-                <li class=""><a href="#" class="text-decoration-none text-light px-3 py-2 d-block"><i class="fa-regular fa-pen-to-square"></i>Požadavky</a></li>
+                <li class="active"><a href="#" class="text-decoration-none text-light px-3 py-2 d-block" href="#"><i class="fa-regular fa-calendar"></i>Kalendář</a></li>
+                <li class="nav-item">
+                    <a href="#" class="text-decoration-none text-light px-3 py-2 d-block nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo"><i class="fa-regular fa-pen-to-square"></i>Požadavky</a>
+                    <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseTwo">Požadavky</button>
+                    <div id="collapseTwo" class="collapse">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Požadavek:</h6>
+                            <a class="collapse-item" href="#" data-toggle="modal" data-target="#vacModal">Dovolená</a>
+                            <a class="collapse-item" href="#" data-toggle="modal" data-target="#noteModal">Jiný</a>
+                        </div>
+                    </div>
+                </li>
                 <li class=""><a href="#" class="text-decoration-none text-light px-3 py-2 d-block"><i class="fa-solid fa-list"></i>Přehled</a></li>
                 <li class=""><a href="#" class="text-decoration-none text-light px-3 py-2 d-block"><i class="fa-solid fa-hammer"></i>Admin</a></li>
                 <li class=""><a href="#" class="text-decoration-none text-light px-3 py-2 d-block"><i class="fa-solid fa-power-off"></i>Odhlásit</a></li>
@@ -181,7 +191,44 @@
             </div>
         </div>
     </div>
-
+    <!-- Vacantion Modal-->
+    <div class="modal fade" id="vacModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Note Modal-->
+    <div class="modal fade" id="noteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
