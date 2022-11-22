@@ -9,11 +9,15 @@ let year = date.getFullYear();
 const day_week = ["ne","po","út","st","čt","pá","so"];
 const months_name = ["Leden", "Únor", "Březen", "Duben", "Květen", "Červen", "Červenec", "Srpen", "Září", "Říjen", "Listopad", "Prosinec"]
 
+// funkce pro výběr elementu v elementu
+
 function loop_days(class_name, num_day){
     let parentDOM = document.querySelector(class_name);
     vstup = parentDOM.querySelectorAll(num_day);
     return vstup;
 };
+
+// výpis čísla dne v měsíci do buněk
 
 function dates_in_month(){
     date.setDate(1);
@@ -33,6 +37,8 @@ function dates_in_month(){
     };
 }
 
+// výpis názvu dne do buněk
+
 function days_in_month(){
     date.setDate(1);
     let month = date.getMonth();
@@ -51,6 +57,8 @@ function days_in_month(){
         }
     };
 };
+
+// skrytí prázdných elementů v měsíci
 
 function hide_empty_element(){
     date.setDate(1);
@@ -75,6 +83,8 @@ function hide_empty_element(){
     }
 }
 
+// funkce pro vyčištění buněk od pozadí a obsahu
+
 function clear_calendar(){
     for(let a = 0; a < 32; a++){
         let parentDOM = document.querySelector(".calendar");
@@ -85,6 +95,9 @@ function clear_calendar(){
         }
     }
 }
+
+// funkce pro výpočet směn v měsíci
+
 function shifts_in_month(){
     date.setDate(1);
     let month = date.getMonth();
@@ -146,6 +159,7 @@ function shifts_in_month(){
     }
 }
 
+// funkce pro nastavení pozadí ve výkendů
 
 function weekend_days(){
     date.setDate(1);
@@ -167,6 +181,8 @@ function weekend_days(){
     };
 };
 
+// funkce pro nastavení názvu měsíce a roku
+
 function set_month(){
     date.setDate(1);
     let month = date.getMonth();
@@ -176,6 +192,8 @@ function set_month(){
 };
 
 let x = 0;
+
+// měsíce lze nastavit max 12 měsícu do minulosti nebo do budoucnosti od aktuálního měsíce
 
 document.querySelector(".left-arrow").addEventListener("click", (event) => {
     if(x > -12){
