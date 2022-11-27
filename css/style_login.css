@@ -1,6 +1,6 @@
 body {
-    --color-primary: #009579;
-    --color-primary-dark: #007f67;
+    --color-primary: #0d6efd;
+    --color-primary-dark: rgb(40, 24, 142);
     --color-secondary: #252c6a;
     --color-error: #cc3333;
     --color-success: #4bb544;
@@ -27,12 +27,12 @@ body {
 }
 
 .container,
-.form__input,
-.form__button {
+.input_form,
+.button_form {
     font: 500 1rem 'Quicksand', sans-serif;
 }
 
-.form--hidden {
+.hide {
     display: none;
 }
 
@@ -44,29 +44,29 @@ body {
     margin-bottom: 0;
 }
 
-.form__title {
+.title_form {
     margin-bottom: 2rem;
     text-align: center;
 }
 
-.form__message {
+.message_form {
     text-align: center;
     margin-bottom: 1rem;
 }
 
-.form__message--success {
+.message_form_success {
     color: var(--color-success);
 }
 
-.form__message--error {
+.message_form_error {
     color: var(--color-error);
 }
 
-.form__input-group {
+.input_form_group {
     margin-bottom: 1rem;
 }
 
-.form__input {
+.input_form {
     display: block;
     width: 100%;
     padding: 0.75rem;
@@ -78,23 +78,23 @@ body {
     transition: background 0.2s, border-color 0.2s;
 }
 
-.form__input:focus {
+.input_form:focus {
     border-color: var(--color-primary);
     background: #ffffff;
 }
 
-.form__input--error {
+.input_form_error {
     color: var(--color-error);
     border-color: var(--color-error);
 }
 
-.form__input-error-message {
+.input_form_error_message {
     margin-top: 0.5rem;
     font-size: 0.85rem;
     color: var(--color-error);
 }
 
-.form__button {
+.button_form {
     width: 100%;
     padding: 1rem 2rem;
     font-weight: bold;
@@ -107,24 +107,24 @@ body {
     background: var(--color-primary);
 }
 
-.form__button:hover {
+.button_form:hover {
     background: var(--color-primary-dark);
 }
 
-.form__button:active {
+.button_form:active {
     transform: scale(0.98);
 }
 
-.form__text {
+.text_form {
     text-align: center;
 }
 
-.form__link {
+.link_form {
     color: var(--color-secondary);
     text-decoration: none;
     cursor: pointer;
 }
 
-.form__link:hover {
+.link_form:hover {
     text-decoration: underline;
 }

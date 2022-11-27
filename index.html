@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     
     <title>NOPIS kalendář</title>
+
 </head>
 <body>
     <div class="main-container d-flex">
@@ -21,13 +22,15 @@
             <ul class="list-unstyled px-2" id="menu-list">
                 <li class="active"><a href="#" class="text-decoration-none text-light px-3 py-2 d-block" href="#"><i class="fa-regular fa-calendar"></i>Kalendář</a></li>
                 <li class="nav-item">
-                    <a href="#" class="text-decoration-none text-light px-3 py-2 d-block nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo"><i class="fa-regular fa-pen-to-square"></i>Požadavky</a>
-                    <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseTwo">Požadavky</button>
-                    <div id="collapseTwo" class="collapse">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Požadavek:</h6>
-                            <a class="collapse-item" href="#" data-toggle="modal" data-target="#vacModal">Dovolená</a>
-                            <a class="collapse-item" href="#" data-toggle="modal" data-target="#noteModal">Jiný</a>
+                    <a class="text-decoration-none text-light px-3 py-2 d-block" data-bs-toggle="collapse" href="#requests" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fa-regular fa-pen-to-square"></i>Požadavky</a>
+                    <div class="collapse" id="requests">                     
+                        <div class="bg-req py-2 rounded">
+                            <button type="button" class="btn btn-primary my-1 mx-3" data-bs-toggle="modal" data-bs-target="#vacModal">
+                                Dovolená
+                            </button><br>
+                            <button type="button" class="btn btn-primary my-1 mx-3" data-bs-toggle="modal" data-bs-target="#noteModal">
+                                Jiný
+                            </button>
                         </div>
                     </div>
                 </li>
@@ -192,41 +195,47 @@
         </div>
     </div>
     <!-- Vacantion Modal-->
-    <div class="modal fade" id="vacModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
+    <!-- Modal -->
+    <div class="modal" id="vacModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Dovolená</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div class="modal-body">
+                <label for="username">Dovolená od:</label><br>
+                <input class="rounded m-1" required type="date" name="startVac" id="startVac"><br>
+                <label for="username">Dovolená do:</label><br>
+                <input class="rounded m-1" required type="date" name="endVac" id="endVac"><br>
+                <label for="username">Poznámka:</label><br>
+                <input class="rounded m-1" type="text" name="noteVac" id="noteVac" placeholder="Komentář">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavřít</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Odeslat</button>
+            </div>
+          </div>
         </div>
     </div>
+
     <!-- Note Modal-->
-    <div class="modal fade" id="noteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
+    <div class="modal" id="noteModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Komentář</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div class="modal-body">
+                <label for="username">Poznámka:</label><br>
+                <input class="rounded m-1" type="text" name="note" id="note" placeholder="Komentář">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavřít</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Odeslat</button>
+            </div>
+          </div>
         </div>
     </div>
 
@@ -240,5 +249,18 @@
             $(this).addClass('active');
         })
     </script>
+    <script>
+        const myModal = document.getElementById('myModal')
+        const myInput = document.getElementById('myInput')
+
+        myModal.addEventListener('shown.bs.modal', () => {
+        myInput.focus()
+        })
+    </script>
+    <!--<script>
+        const collapseElementList = document.querySelectorAll('.collapse')
+        const collapseList = [...collapseElementList].map(collapseEl => new bootstrap.Collapse(collapseEl))
+
+    </script>-->
 </body>
 </html>

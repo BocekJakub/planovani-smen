@@ -9,20 +9,20 @@
 </head>
 <body>
     <div class="container">
-        <form class="form" id="login">
-            <h1 class="form__title">Přihlášení</h1>
-            <div class="form__message form__message--error"></div>
-            <div class="form__input-group">
-                <input type="text" class="form__input" autofocus placeholder="E-mail">
-                <div class="form__input-error-message"></div>
+        <form action="login_form.php" method="POST" class="form" id="login">
+            <h1 class="title_form">Přihlášení</h1>
+            <div class="info_form info_form_error"></div>
+            <div class="input_form_group">
+                <input type="text" class="input_form" name="name" autofocus placeholder="E-mail">
+                <div class="input_form_error_message"></div>
             </div>
-            <div class="form__input-group">
-                <input type="password" class="form__input" autofocus placeholder="Heslo">
-                <div class="form__input-error-message"></div>
+            <div class="form_input-group">
+                <input type="password" name="password" class="input_form" autofocus placeholder="Heslo">
+                <div class="input_form_error_message"></div>
             </div>
-            <button class="form__button" type="submit">Přihlásit</button>
-            <p class="form__text">
-                <a href="#" class="form__link">Zapoměli jste heslo?</a>
+            <button class="button_form" type="submit" name="submit">Přihlásit</button>
+            <p class="text_form">
+                <a href="#" class="link_form">Zapoměli jste heslo?</a>
             </p>
         </form>
     </div>

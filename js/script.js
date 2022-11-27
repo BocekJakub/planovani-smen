@@ -234,3 +234,19 @@ weekend_days();
 shifts_in_month();
 set_month();
 hide_empty_element();
+
+butVac = document.querySelector("#vacModal").querySelector(".btn-primary").addEventListener("click", () => {
+    start_vac = document.querySelector("#vacModal").querySelector("#startVac").valueAsDate;
+    end_vac = document.querySelector("#vacModal").querySelector("#endVac").valueAsDate;
+
+    year_start_vac = start_vac.getFullYear();
+    month_start_vac = start_vac.getMonth();
+    day_start_vac = start_vac.getDate();
+
+    year_end_vac = end_vac.getFullYear();
+    month_end_vac = end_vac.getMonth();
+    day_end_vac = end_vac.getDate();
+
+    
+
+})

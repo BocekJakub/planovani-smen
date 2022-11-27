@@ -114,3 +114,8 @@ body {
 #O1VS, #O1OD, #O1T1, #O1T2, #O2VS, #O2OD, #O2T1, #O2T2, #O3VS, #O3OD, #O3T1, #O3T2, #O4VS, #O4OD, #O4T1, #O4T2 {
     padding-left: 4px;
 }
+
+.bg-req {
+    background: rgb(40, 24, 142);
+    color: #eee;
+}
