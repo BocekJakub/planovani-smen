@@ -21,8 +21,7 @@
             </div>
             <ul class="list-unstyled px-2" id="menu-list">
                 <li class="active"><a href="#" class="text-decoration-none text-light px-3 py-2 d-block" href="#"><i class="fa-regular fa-calendar"></i>Kalendář</a></li>
-                <li class="nav-item">
-                    <a class="text-decoration-none text-light px-3 py-2 d-block" data-bs-toggle="collapse" href="#requests" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fa-regular fa-pen-to-square"></i>Požadavky</a>
+                <li class="nav-item"><a class="text-decoration-none text-light px-3 py-2 d-block" data-bs-toggle="collapse" href="#requests" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fa-regular fa-pen-to-square"></i>Požadavky</a>
                     <div class="collapse" id="requests">                     
                         <div class="bg-req py-2 rounded">
                             <button type="button" class="btn btn-primary my-1 mx-3" data-bs-toggle="modal" data-bs-target="#vacModal">
@@ -35,8 +34,31 @@
                     </div>
                 </li>
                 <li class=""><a href="#" class="text-decoration-none text-light px-3 py-2 d-block"><i class="fa-solid fa-list"></i>Přehled</a></li>
-                <li class=""><a href="#" class="text-decoration-none text-light px-3 py-2 d-block"><i class="fa-solid fa-hammer"></i>Admin</a></li>
-                <li class=""><a href="#" class="text-decoration-none text-light px-3 py-2 d-block"><i class="fa-solid fa-power-off"></i>Odhlásit</a></li>
+                <li class="nav-item"><a class="text-decoration-none text-light px-3 py-2 d-block" data-bs-toggle="collapse" href="#admin-plan" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fa-solid fa-hammer"></i>Admin</a>
+                    <div class="collapse" id="admin-plan">                     
+                        <div class="bg-req py-2 rounded">
+                            <button type="button" class="btn btn-primary my-1 mx-3" data-bs-toggle="modal" data-bs-target="#shiftsModal">
+                                Schválení dovolené
+                            </button><br>
+                            <button type="button" class="btn btn-primary my-1 mx-3" data-bs-toggle="modal" data-bs-target="#planModal">
+                                Plánování směn
+                            </button><br>
+                            <button type="button" class="btn btn-primary my-1 mx-3" data-bs-toggle="modal" data-bs-target="#vacModal">
+                                Složení směn
+                            </button><br>
+                            <button type="button" class="btn btn-primary my-1 mx-3" data-bs-toggle="modal" data-bs-target="#userModal">
+                                Přidání příslušníka
+                            </button><br>
+                            <button type="button" class="btn btn-primary my-1 mx-3" data-bs-toggle="modal" data-bs-target="#vacModal">
+                                Dovolená
+                            </button><br>
+                            <button type="button" class="btn btn-primary my-1 mx-3" data-bs-toggle="modal" data-bs-target="#noteModal">
+                                Jiný
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li class=""><a href="login.html" class="text-decoration-none text-light px-3 py-2 d-block"><i class="fa-solid fa-power-off"></i>Odhlásit</a></li>
             </ul>
         </div>
         <div class="content">
@@ -194,8 +216,8 @@
             </div>
         </div>
     </div>
+
     <!-- Vacantion Modal-->
-    <!-- Modal -->
     <div class="modal" id="vacModal" tabindex="-1">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -237,6 +259,89 @@
             </div>
           </div>
         </div>
+    </div>
+
+    <!-- Shifts Modal-->
+    <div class="modal" id="shiftsModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Složení směn</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="username">Poznámka:</label><br>
+                <input class="rounded m-1" type="text" name="note" id="note" placeholder="Komentář">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavřít</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Odeslat</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Shifts Modal-->
+    <div class="modal" id="planModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Plánování směn</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="username">Poznámka:</label><br>
+                <input class="rounded m-1" type="text" name="note" id="note" placeholder="Komentář">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavřít</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Odeslat</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- User Modal-->
+    <div class="modal" id="userModal" tabindex="-1">
+        <form action="userModal.php" method="POST" id="newUser" class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Přidání příslušníka</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="username">Jméno:</label>
+                <input class="rounded m-1" type="text" name="fullname" id="note" placeholder="Jméno"><br>
+                <label for="username">E-mail:</label>
+                <input class="rounded m-1" type="text" name="email" id="note" placeholder="E-mail"><br>
+                <label for="username">Heslo:</label>
+                <input class="rounded m-1" type="text" name="password" id="note" placeholder="Heslo"><br>
+                <label for="username">Dovolená (hod.):</label>
+                <input class="rounded m-1" type="text" name="vacan" id="note" placeholder="Počet"><br>
+                <label for="username">FPD (hod.):</label>
+                <input class="rounded m-1" type="text" name="fpd" id="note" placeholder="Počet"><br>
+                <label for="username">Pozice:</label>
+                <select name="position" id="">
+                    <option value="VS">Vedoucí směny</option>
+                    <option value="OD">Operační důstojník</option>
+                    <option value="T1">Operační technik 1</option>
+                    <option value="T2">Operační technik 2</option>
+                </select><br>
+                <label for="username">Směna:</label>
+                <select name="shift" id="">
+                    <option value="O1">O1</option>
+                    <option value="O2">O2</option>
+                    <option value="O3">O3</option>
+                    <option value="O4">O4</option>
+                </select>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavřít</button>
+                <button class="btn btn-primary" data-bs-dismiss="modal" type="submit" name="submit">Odeslat</button>
+            </div>
+            </div>
+        </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
